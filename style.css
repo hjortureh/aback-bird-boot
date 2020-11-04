@@ -1,0 +1,138 @@
+
+/*
+* Base CSS
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+  
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 2em;
+}
+
+h1 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 40px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/*
+* CSS Transitions
+*/
+
+.color {
+  transition: background-color 300ms;
+  background-color: black;
+}
+
+.color:hover {
+  background-color: hotpink;
+}
+
+.fade {
+  transition: opacity 300ms;
+  opacity: 1;
+}
+
+.fade:hover {
+  transition: opacity 3s;
+  opacity: 0.1;
+}
+
+.width {
+  transition: all 500ms cubic-bezier(0.87, 0, 0.13, 1);
+  width: 150px;
+}
+
+.width:hover {
+  width: 1000px;
+  background-color: blue;
+}
+
+
+/*
+* CSS Transform
+*/
+
+.translate {
+  transition: transform 500ms ease-in-out;
+}
+
+.translate.clicked {
+  transform: translateX(300px); 
+}
+
+.rotate {
+  transition: transform 3s;
+  transform: rotate(0deg);
+}
+
+.rotate.clicked {
+  transform: rotate(360deg);
+}
+
+.scale {
+  transition: transform 300ms ease-in-out;
+  transform: scale(1, 1)
+}
+
+.scale.clicked {
+  transform: scale(3, 3)
+}
+
+.translate-and-rotate {
+  transition: transform 300ms ease-in-out;
+}
+
+.translate-and-rotate.clicked {
+  transform: translateX(500px) rotate(720deg);
+}
+
+/*
+* CSS Animation
+*/
+
+@keyframes animation {
+  0% {
+    transform: translateX(0)
+  }
+  25%  {
+    transform: translateX(300%);
+    background-color: yellow;
+  }
+  50%  {
+    transform: translateX(-300%)
+  }
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.swing.clicked {
+  animation-name: animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 0;
+  animation-direction: reverse;
+}
+
+
+
